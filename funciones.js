@@ -10,3 +10,20 @@ function calcularDisponible(ingresos, egresos) {
 function calcularCapacidadPago(montoDisponible) {
     return montoDisponible * 0.50;
 }
+function calcularInteresSimple(monto, tasa, plazoAnios) {
+    return plazoAnios * monto * (tasa / 100);
+}
+function calcularTotalPagar(monto, interes) {
+    return monto + interes + 100;
+}
+function calcularCuotaMensual(total, plazoAnios) {
+    let meses = plazoAnios * 12;
+    return total / meses;
+}
+function aprobarCredito(capacidadPago, cuotaMensual) {
+    if (capacidadPago > cuotaMensual) {
+        return true;
+    }
+
+    return false;
+}
