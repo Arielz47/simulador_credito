@@ -1,46 +1,199 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Simulador de Crédito</title>
+
+    <!-- Archivo de estilos -->
     <link rel="stylesheet" href="simulador.css">
 </head>
+
 <body>
 
     <div class="container">
+
+        <!-- TÍTULO -->
         <h1>Simulador de Crédito</h1>
 
+        <!-- ============================== -->
+        <!-- DATOS FINANCIEROS -->
+        <!-- ============================== -->
+
         <h2>Datos financieros</h2>
-        <label for="txtIngresos">Ingresos:</label>
-        <input type="text" id="txtIngresos">
 
-        <label for="txtEgresos">Egresos:</label>
-        <input type="text" id="txtEgresos">
+        <label for="txtIngresos">
+            Ingresos mensuales:
+        </label>
 
-        <p>Disponible: <span id="spnDisponible"></span></p>
-        <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
+        <input
+            type="number"
+            id="txtIngresos"
+            placeholder="Ejemplo: 1000"
+            min="0"
+            step="0.01"
+        >
+
+
+        <label for="txtEgresos">
+            Egresos mensuales:
+        </label>
+
+        <input
+            type="number"
+            id="txtEgresos"
+            placeholder="Ejemplo: 600"
+            min="0"
+            step="0.01"
+        >
+
+
+        <!-- RESULTADO DISPONIBLE -->
+
+        <p>
+            Disponible mensual:
+            <span id="spnDisponible">
+                USD 0.00
+            </span>
+        </p>
+
+
+        <!-- CAPACIDAD DE PAGO -->
+
+        <p>
+            Capacidad de pago mensual:
+            <span id="spnCapacidadPago">
+                USD 0.00
+            </span>
+        </p>
+
+
+        <!-- ============================== -->
+        <!-- SOLICITUD DEL CRÉDITO -->
+        <!-- ============================== -->
 
         <h2>Solicitud de crédito</h2>
-        <label for="txtMonto">Monto:</label>
-        <input type="text" id="txtMonto">
 
-        <label for="txtPlazo">Plazo en años:</label>
-        <input type="text" id="txtPlazo">
 
-        <label for="txtTasaInteres">Tasa de interés:</label>
-        <input type="text" id="txtTasaInteres">
+        <label for="txtMonto">
+            Monto solicitado:
+        </label>
 
-        <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
-        <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>
-        <p>Cuota mensual: <span id="spnCuotaMensual"></span></p>
-        <p>Estado de crédito: <span id="spnEstadoCredito">ANALIZANDO...</span></p>
+        <input
+            type="number"
+            id="txtMonto"
+            placeholder="Ejemplo: 2000"
+            min="0"
+            step="0.01"
+        >
+
+
+        <label for="txtPlazo">
+            Plazo en años:
+        </label>
+
+        <input
+            type="number"
+            id="txtPlazo"
+            placeholder="Ejemplo: 1"
+            min="1"
+            step="1"
+        >
+
+
+        <label for="txtTasaInteres">
+            Tasa de interés anual (%):
+        </label>
+
+        <input
+            type="number"
+            id="txtTasaInteres"
+            placeholder="Ejemplo: 10"
+            min="0"
+            step="0.01"
+        >
+
+
+        <!-- ============================== -->
+        <!-- RESULTADOS DEL CRÉDITO -->
+        <!-- ============================== -->
+
+        <h2>Resultados</h2>
+
+
+        <p>
+            Interés generado:
+            <span id="spnInteresPagar">
+                USD 0.00
+            </span>
+        </p>
+
+
+        <p>
+            Total a pagar:
+            <span id="spnTotalPrestamo">
+                USD 0.00
+            </span>
+        </p>
+
+
+        <p>
+            Cuota mensual:
+            <span id="spnCuotaMensual">
+                USD 0.00
+            </span>
+        </p>
+
+
+        <!-- ESTADO DEL CRÉDITO -->
+
+        <p>
+            Estado del crédito:
+            <span id="spnEstadoCredito">
+                SIN CALCULAR
+            </span>
+        </p>
+
+
+        <!-- ============================== -->
+        <!-- BOTONES -->
+        <!-- ============================== -->
 
         <div class="buttons">
-            <button id="btnCalcularCredito">Calcular Crédito</button>
-            <button id="btnReiniciar">Reiniciar</button>
+
+            <button
+                type="button"
+                id="btnCalcularCredito"
+            >
+                Calcular Crédito
+            </button>
+
+
+            <button
+                type="button"
+                id="btnReiniciar"
+            >
+                Reiniciar
+            </button>
+
         </div>
+
     </div>
 
+
+    <!-- ================================= -->
+    <!-- ARCHIVOS JAVASCRIPT -->
+    <!-- ================================= -->
+
+    <!-- Primero se cargan las funciones -->
+    <script src="funciones.js"></script>
+
+    <!-- Después el simulador -->
+    <script src="simulador.js"></script>
+
 </body>
+
 </html>
