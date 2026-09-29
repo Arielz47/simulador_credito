@@ -1,0 +1,66 @@
+PROMPT 1
+
+Agrega validaciones al formulario del simulador de crédito.
+Todos los campos deben ser obligatorios y los errores deben
+mostrarse debajo del campo correspondiente después de presionar
+el botón Calcular Simulador.
+
+
+PROMPT 2
+
+Valida el campo ingresos del simulador.
+Debe aceptar únicamente números mayores a 0 y tener un máximo
+de USD 100000. Mostrar el error debajo del campo.
+
+
+PROMPT 3
+
+Valida el campo egresos.
+Debe aceptar números desde 0 hasta USD 100000 y no debe
+permitir valores negativos.
+
+
+PROMPT 4
+
+Valida el monto solicitado.
+El monto mínimo permitido debe ser USD 100 y el máximo
+USD 100000. El campo debe ser obligatorio.
+
+
+PROMPT 5
+
+Valida el plazo del crédito.
+Debe ser obligatorio, aceptar únicamente años enteros,
+tener un mínimo de 1 año y máximo de 30 años.
+
+
+PROMPT 6
+
+Valida la tasa de interés.
+Debe ser obligatoria, numérica, mayor a 0 y máximo 100%.
+
+
+PROMPT 7
+
+Haz que todos los errores aparezcan debajo del campo
+correspondiente y que el borde del campo cambie cuando
+exista un error.
+
+
+PROMPT 8
+
+Haz que el botón Reiniciar limpie todos los campos,
+resultados, mensajes de error y estado del crédito.
+
+
+PROMPT 9
+
+Mejora el diseño del simulador para que tenga apariencia
+corporativa de una institución financiera, sea legible,
+estético y profesional.
+
+
+PROMPT 10
+
+Haz que el simulador sea completamente responsive y se
+adapte correctamente a computadoras, tablets y celulares.

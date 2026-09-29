@@ -3,195 +3,334 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Simulador de Crédito</title>
+    <title>Banco Andino | Simulador de Crédito</title>
 
-    <!-- Archivo de estilos -->
     <link rel="stylesheet" href="simulador.css">
 </head>
 
 <body>
 
-    <div class="container">
+    <header class="header">
+        <div class="logo">
+            <div class="logo-icon">BA</div>
 
-        <!-- TÍTULO -->
-        <h1>Simulador de Crédito</h1>
-
-        <!-- ============================== -->
-        <!-- DATOS FINANCIEROS -->
-        <!-- ============================== -->
-
-        <h2>Datos financieros</h2>
-
-        <label for="txtIngresos">
-            Ingresos mensuales:
-        </label>
-
-        <input
-            type="number"
-            id="txtIngresos"
-            placeholder="Ejemplo: 1000"
-            min="0"
-            step="0.01"
-        >
+            <div>
+                <h1>Banco Andino</h1>
+                <span>Soluciones financieras</span>
+            </div>
+        </div>
+    </header>
 
 
-        <label for="txtEgresos">
-            Egresos mensuales:
-        </label>
+    <main class="container">
 
-        <input
-            type="number"
-            id="txtEgresos"
-            placeholder="Ejemplo: 600"
-            min="0"
-            step="0.01"
-        >
+        <section class="intro">
+            <span class="badge">SIMULADOR ONLINE</span>
 
+            <h2>Simulador de Crédito</h2>
 
-        <!-- RESULTADO DISPONIBLE -->
-
-        <p>
-            Disponible mensual:
-            <span id="spnDisponible">
-                USD 0.00
-            </span>
-        </p>
+            <p>
+                Calcula tu capacidad de pago, cuota mensual
+                y conoce si el crédito puede ser aprobado.
+            </p>
+        </section>
 
 
-        <!-- CAPACIDAD DE PAGO -->
+        <div class="simulator-grid">
 
-        <p>
-            Capacidad de pago mensual:
-            <span id="spnCapacidadPago">
-                USD 0.00
-            </span>
-        </p>
+            <!-- ===================== -->
+            <!-- FORMULARIO -->
+            <!-- ===================== -->
 
+            <section class="card">
 
-        <!-- ============================== -->
-        <!-- SOLICITUD DEL CRÉDITO -->
-        <!-- ============================== -->
+                <h3>Datos financieros</h3>
 
-        <h2>Solicitud de crédito</h2>
+                <p class="section-description">
+                    Ingresa tu información financiera mensual.
+                </p>
 
 
-        <label for="txtMonto">
-            Monto solicitado:
-        </label>
+                <!-- INGRESOS -->
 
-        <input
-            type="number"
-            id="txtMonto"
-            placeholder="Ejemplo: 2000"
-            min="0"
-            step="0.01"
-        >
+                <div class="form-group">
 
+                    <label for="txtIngresos">
+                        Ingresos mensuales
+                    </label>
 
-        <label for="txtPlazo">
-            Plazo en años:
-        </label>
+                    <div class="input-money">
+                        <span>$</span>
 
-        <input
-            type="number"
-            id="txtPlazo"
-            placeholder="Ejemplo: 1"
-            min="1"
-            step="1"
-        >
+                        <input
+                            type="number"
+                            id="txtIngresos"
+                            placeholder="Ej: 1000"
+                            min="1"
+                            max="100000"
+                            step="0.01"
+                        >
+                    </div>
 
+                    <small
+                        class="error"
+                        id="errorIngresos">
+                    </small>
 
-        <label for="txtTasaInteres">
-            Tasa de interés anual (%):
-        </label>
-
-        <input
-            type="number"
-            id="txtTasaInteres"
-            placeholder="Ejemplo: 10"
-            min="0"
-            step="0.01"
-        >
+                </div>
 
 
-        <!-- ============================== -->
-        <!-- RESULTADOS DEL CRÉDITO -->
-        <!-- ============================== -->
+                <!-- EGRESOS -->
 
-        <h2>Resultados</h2>
+                <div class="form-group">
 
+                    <label for="txtEgresos">
+                        Egresos mensuales
+                    </label>
 
-        <p>
-            Interés generado:
-            <span id="spnInteresPagar">
-                USD 0.00
-            </span>
-        </p>
+                    <div class="input-money">
+                        <span>$</span>
 
+                        <input
+                            type="number"
+                            id="txtEgresos"
+                            placeholder="Ej: 600"
+                            min="0"
+                            max="100000"
+                            step="0.01"
+                        >
+                    </div>
 
-        <p>
-            Total a pagar:
-            <span id="spnTotalPrestamo">
-                USD 0.00
-            </span>
-        </p>
+                    <small
+                        class="error"
+                        id="errorEgresos">
+                    </small>
 
-
-        <p>
-            Cuota mensual:
-            <span id="spnCuotaMensual">
-                USD 0.00
-            </span>
-        </p>
+                </div>
 
 
-        <!-- ESTADO DEL CRÉDITO -->
-
-        <p>
-            Estado del crédito:
-            <span id="spnEstadoCredito">
-                SIN CALCULAR
-            </span>
-        </p>
+                <div class="divider"></div>
 
 
-        <!-- ============================== -->
-        <!-- BOTONES -->
-        <!-- ============================== -->
+                <h3>Solicitud de crédito</h3>
 
-        <div class="buttons">
-
-            <button
-                type="button"
-                id="btnCalcularCredito"
-            >
-                Calcular Crédito
-            </button>
+                <p class="section-description">
+                    Ingresa las condiciones del crédito.
+                </p>
 
 
-            <button
-                type="button"
-                id="btnReiniciar"
-            >
-                Reiniciar
-            </button>
+                <!-- MONTO -->
+
+                <div class="form-group">
+
+                    <label for="txtMonto">
+                        Monto solicitado
+                    </label>
+
+                    <div class="input-money">
+                        <span>$</span>
+
+                        <input
+                            type="number"
+                            id="txtMonto"
+                            placeholder="Ej: 2000"
+                            min="100"
+                            max="100000"
+                            step="0.01"
+                        >
+                    </div>
+
+                    <small
+                        class="error"
+                        id="errorMonto">
+                    </small>
+
+                </div>
+
+
+                <!-- PLAZO -->
+
+                <div class="form-group">
+
+                    <label for="txtPlazo">
+                        Plazo en años
+                    </label>
+
+                    <input
+                        type="number"
+                        id="txtPlazo"
+                        placeholder="Ej: 1"
+                        min="1"
+                        max="30"
+                        step="1"
+                    >
+
+                    <small
+                        class="error"
+                        id="errorPlazo">
+                    </small>
+
+                </div>
+
+
+                <!-- TASA -->
+
+                <div class="form-group">
+
+                    <label for="txtTasaInteres">
+                        Tasa de interés anual (%)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="txtTasaInteres"
+                        placeholder="Ej: 10"
+                        min="0.01"
+                        max="100"
+                        step="0.01"
+                    >
+
+                    <small
+                        class="error"
+                        id="errorTasa">
+                    </small>
+
+                </div>
+
+
+                <!-- BOTONES -->
+
+                <div class="buttons">
+
+                    <button
+                        type="button"
+                        id="btnCalcularCredito"
+                        class="btn-primary">
+                        Calcular Simulador
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnReiniciar"
+                        class="btn-secondary">
+                        Reiniciar
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- ===================== -->
+            <!-- RESULTADOS -->
+            <!-- ===================== -->
+
+            <section class="card results-card">
+
+                <h3>Resultado de la simulación</h3>
+
+                <p class="section-description">
+                    Los resultados aparecerán después
+                    de completar correctamente el formulario.
+                </p>
+
+
+                <div class="result">
+
+                    <span>Disponible mensual</span>
+
+                    <strong id="spnDisponible">
+                        USD 0.00
+                    </strong>
+
+                </div>
+
+
+                <div class="result">
+
+                    <span>Capacidad de pago</span>
+
+                    <strong id="spnCapacidadPago">
+                        USD 0.00
+                    </strong>
+
+                </div>
+
+
+                <div class="result">
+
+                    <span>Interés generado</span>
+
+                    <strong id="spnInteresPagar">
+                        USD 0.00
+                    </strong>
+
+                </div>
+
+
+                <div class="result">
+
+                    <span>Total a pagar</span>
+
+                    <strong id="spnTotalPrestamo">
+                        USD 0.00
+                    </strong>
+
+                </div>
+
+
+                <div class="result highlight">
+
+                    <span>Cuota mensual</span>
+
+                    <strong id="spnCuotaMensual">
+                        USD 0.00
+                    </strong>
+
+                </div>
+
+
+                <div
+                    id="estadoBox"
+                    class="estado-box">
+
+                    <span>Estado del crédito</span>
+
+                    <strong id="spnEstadoCredito">
+                        SIN CALCULAR
+                    </strong>
+
+                </div>
+
+
+                <div class="info">
+                    <strong>Importante</strong>
+
+                    <p>
+                        Esta simulación es únicamente
+                        informativa y no constituye una
+                        aprobación bancaria real.
+                    </p>
+                </div>
+
+            </section>
 
         </div>
 
-    </div>
+    </main>
 
 
-    <!-- ================================= -->
-    <!-- ARCHIVOS JAVASCRIPT -->
-    <!-- ================================= -->
+    <footer>
+        <p>
+            © 2026 Banco Andino |
+            Simulador académico de crédito
+        </p>
+    </footer>
 
-    <!-- Primero se cargan las funciones -->
+
     <script src="funciones.js"></script>
-
-    <!-- Después el simulador -->
     <script src="simulador.js"></script>
 
 </body>
