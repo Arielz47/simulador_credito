@@ -1,0 +1,9 @@
+Prompt 1:
+Mejora la apariencia de mi simulador de crédito para que tenga
+un diseño empresarial y responsive.
+
+Prompt 2:
+Diseña un formulario moderno para una entidad financiera ficticia.
+
+Prompt 3:
+Haz que el simulador de crédito se adapte a celulares y computadoras.
